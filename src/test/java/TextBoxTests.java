@@ -24,7 +24,7 @@ public class TextBoxTests {
     String Name = "Evgeny";
     String LastName = "Drahileu";
     String Mail ="ED@gmail.com";
-    String Num = "37533133737";
+    String Num = "3753313373";
     String Eng = "Eng";
     String Addres = "Belarus, Mohileu";
     String State = "NCR";
@@ -54,7 +54,19 @@ public class TextBoxTests {
         $("#react-select-4-input").setValue(City).pressEnter();
         $("#submit").click();
         $(".modal-content").shouldBe(visible);
-
+        //Check
+        $(".table-responsive").shouldHave(text(Name));
+        $(".table-responsive").shouldHave(text(LastName));
+        $(".table-responsive").shouldHave(text(Mail));
+        $(".table-responsive").shouldHave(text(Num));
+        $(".table-responsive").shouldHave(text("Male"));
+        $(".table-responsive").shouldHave(text("Sports, Reading"));
+        $(".table-responsive").shouldHave(text("07 March,1996"));
+        $(".table-responsive").shouldHave(text("1.png"));
+        $(".table-responsive").shouldHave(text(Eng));
+        $(".table-responsive").shouldHave(text(Addres));
+        $(".table-responsive").shouldHave(text(State));
+        $(".table-responsive").shouldHave(text(City));
 
 
     }
