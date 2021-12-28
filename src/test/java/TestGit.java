@@ -12,14 +12,14 @@ public class TestGit {
         Configuration.browserSize = "1920x1080";
         Configuration.pageLoadTimeout = 100000;
     }
-
+    String SEL = "Selenide";
     String SA = "SoftAssertions";
     String EW = "@ExtendWith";
 
     @Test
     void fillFromTest() {
         open("https://github.com/");
-        $("[name = q]").setValue("Selenide").pressEnter();
+        $("[name = q]").setValue(SEL).pressEnter();
         $$("ul.repo-list li").first().$("a").click();
         $("#wiki-tab").click();
         $(".js-wiki-more-pages-link").click();
