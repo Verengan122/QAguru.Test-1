@@ -1,3 +1,5 @@
+package HomeWork3;
+
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.impl.WebElementSelector;
 import org.junit.jupiter.api.BeforeAll;

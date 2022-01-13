@@ -1,19 +1,17 @@
+package HomeWork2;
+
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.WebDriverRunner;
-import com.codeborne.selenide.commands.ScrollTo;
-import io.netty.handler.codec.http.multipart.FileUpload;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
 
 import java.io.File;
-import java.time.Duration;
 
-import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selectors.*;
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
 
-public class TextBoxTests {
+public class TextBoxFormtest {
 
     @BeforeAll
     static void beforeAll() {
