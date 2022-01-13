@@ -26,7 +26,7 @@ public class TextBoxTests {
     String num = faker.numerify("##########");
     String addres = faker.address().country() + " " +
                     faker.address().cityName() + " " +
-                    faker.address().buildingNumber();++
+                    faker.address().buildingNumber();
     String lang = "Eng";
     String state = "NCR";
     String city = "Delhi";
