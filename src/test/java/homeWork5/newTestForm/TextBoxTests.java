@@ -1,20 +1,14 @@
-package HomeWork5.NewTestForm;
+package homeWork5.newTestForm;
 
-import Pages.RegistrationPages;
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.WebDriverRunner;
-import com.codeborne.selenide.commands.ScrollTo;
 import com.github.javafaker.Faker;
-import io.netty.handler.codec.http.multipart.FileUpload;
+import homeWork5.newTestForm.components.Calendar;
+import homeWork5.newTestForm.steps.RegistrationStep;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
 
-import java.io.File;
-import java.time.Duration;
+import java.awt.*;
 
-import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
 public class TextBoxTests {
@@ -26,40 +20,40 @@ public class TextBoxTests {
     }
     //setTimeout(function (){debugger},5000)
     Faker faker = new Faker();
-    String nameInput = faker.name().firstName();
-    String lastName = faker.name().lastName() ;
+    String firstName = faker.name().firstName();
+    String lastName = faker.name().lastName();
     String mail =faker.internet().emailAddress();
     String num = faker.numerify("##########");
     String addres = faker.address().country() + " " +
-            faker.address().cityName() + " " +
-            faker.address().buildingNumber();
-    String eng = "Eng";
+                    faker.address().cityName() + " " +
+                    faker.address().buildingNumber();++
+    String lang = "Eng";
     String state = "NCR";
     String city = "Delhi";
-    RegistrationPages registrationPages = new RegistrationPages();
+    RegistrationStep registrationSteps = new RegistrationStep();
+    Calendar calendar = new Calendar();
 
 
     @Test
     void fillFormTest() {
         open("https://demoqa.com/automation-practice-form");
-        registrationPages.typeNameInput(nameInput) ;
-//        $("[id=lastName]").setValue(LastName);
-//        $("#userEmail").setValue(Mail);
-//        $("[for=gender-radio-1]").click();
-//        $("[id=userNumber]").setValue(Num);
-//        $("#dateOfBirthInput").click();
-//        $(".react-datepicker__month-select").selectOption("March");
-//        $(".react-datepicker__year-select").selectOption("1996");
-//        $(".react-datepicker__day--007").click();
-//        $("[id=subjectsInput]").setValue(Eng).pressEnter();
-//        $("[for=hobbies-checkbox-1]").click();
+        registrationSteps.setFirstName(firstName);
+        registrationSteps.setLastName(lastName);
+        registrationSteps.setUserEmail(mail);
+        registrationSteps.setUserPhoneNumber(num);
+        registrationSteps.setBirthDate("");
+        registrationSteps.setLang(lang);
+        registrationSteps.setHobbies("");
+        sleep(10000);
+
 //        $("[for=hobbies-checkbox-2]").click();
 //        $("#uploadPicture").uploadFile(new File("src/test/resources/img/1.png"));
-//        $("#currentAddress").setValue(Addres).scrollTo();
+
+//        $("#currentAddress").setValue(addres).scrollTo();
 //        $("#state").click();
-//        $("#react-select-3-input").setValue(State).pressEnter();
+//        $("#react-select-3-input").setValue(state).pressEnter();
 //        $("#city").click();
-//        $("#react-select-4-input").setValue(City).pressEnter();
+//        $("#react-select-4-input").setValue(city).pressEnter();
 //        $("#submit").click();
 //        $(".modal-content").shouldBe(visible);
 //        //Check

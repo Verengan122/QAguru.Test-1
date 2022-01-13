@@ -1,4 +1,4 @@
-package HomeWork3;
+package homeWork3;
 
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
@@ -24,8 +24,8 @@ public class TestGit {
         $("[name = q]").setValue(SEL).pressEnter();
         $$("ul.repo-list li").first().$("a").click();
         $("#wiki-tab").click();
-        $(".js-wiki-more-pages-link").click();
-        $("[data-filterable-for = wiki-pages-filter]").$(byText(SA)).scrollTo().shouldBe(visible).click();
+        $(".js-wiki-more-homeWork5.pages-link").click();
+        $("[data-filterable-for = wiki-homeWork5.pages-filter]").$(byText(SA)).scrollTo().shouldBe(visible).click();
         $$(".highlight-source-java").find(text(EW)).scrollTo().shouldBe(visible);
 
 

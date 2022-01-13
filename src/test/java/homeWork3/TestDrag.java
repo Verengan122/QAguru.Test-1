@@ -1,17 +1,10 @@
-package HomeWork3;
+package homeWork3;
 
-import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.impl.WebElementSelector;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-
-import javax.lang.model.element.Element;
 
 import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
 public class TestDrag {
