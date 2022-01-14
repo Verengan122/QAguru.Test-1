@@ -19,7 +19,7 @@ public class TextBoxTests extends TestBase {
     String addres = faker.address().country() + " " +
             faker.address().cityName() + " " +
             faker.address().buildingNumber();
-    String lang = "Eng";
+    String subject = "Eng";
 
     @Test
     void fillFormTest() {
@@ -31,7 +31,7 @@ public class TextBoxTests extends TestBase {
                 .setUserMale()
                 .setUserPhoneNumber(num)
                 .setBirthDate()
-                .setLang(lang)
+                .setLang(subject)
                 .setHobbies("Sports", "Reading", "Music")
                 .setFile()
                 .setUserAddress(addres)
@@ -44,7 +44,7 @@ public class TextBoxTests extends TestBase {
                 .checkFieldFromResultPracticeForm("Student Email", mail)
                 .checkFieldFromResultPracticeForm("Mobile", num)
                 .checkFieldFromResultPracticeForm("Gender", "Male")
-                .checkFieldFromResultPracticeForm("Subjects", lang)
+                .checkFieldFromResultPracticeForm("Subjects", subject)
                 .checkFieldFromResultPracticeForm("Date of Birth", "07 March,1996")
                 .checkFieldFromResultPracticeForm("Hobbies", "Sports, Reading, Music")
                 .checkFieldFromResultPracticeForm("Picture", "1.png")

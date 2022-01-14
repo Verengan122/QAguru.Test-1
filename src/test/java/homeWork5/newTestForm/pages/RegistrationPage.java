@@ -17,7 +17,7 @@ public class RegistrationPage {
             lastname = Selenide.$("[id=lastName]"),
             userEmail = Selenide.$("#userEmail"),
             userNumberPhone = Selenide.$("[id=userNumber]"),
-            userLang = Selenide.$("[id=subjectsInput]"),
+            userSubject = Selenide.$("[id=subjectsInput]"),
             userHobbiesSport = Selenide.$("[for=hobbies-checkbox-1]"),
             userHobbiesReading = Selenide.$("[for=hobbies-checkbox-2]"),
             userHobbiesMusic = Selenide.$("[for=hobbies-checkbox-3]"),

@@ -52,7 +52,7 @@ public class RegistrationStep extends RegistrationPage {
     }
 
     public RegistrationStep setLang(String value) {
-        userLang.setValue(value).pressEnter();
+        userSubject.setValue(value).pressEnter();
         return this;
     }
 
