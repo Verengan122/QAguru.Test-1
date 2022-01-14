@@ -8,6 +8,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.awt.*;
+import java.io.File;
 
 import static com.codeborne.selenide.Selenide.*;
 
@@ -19,19 +20,17 @@ public class TextBoxTests {
         Configuration.pageLoadTimeout = 100000;
     }
     //setTimeout(function (){debugger},5000)
+    RegistrationStep registrationSteps = new RegistrationStep();
     Faker faker = new Faker();
+
     String firstName = faker.name().firstName();
     String lastName = faker.name().lastName();
-    String mail =faker.internet().emailAddress();
+    String mail = faker.internet().emailAddress();
     String num = faker.numerify("##########");
     String addres = faker.address().country() + " " +
-                    faker.address().cityName() + " " +
-                    faker.address().buildingNumber();
+            faker.address().cityName() + " " +
+            faker.address().buildingNumber();
     String lang = "Eng";
-    String state = "NCR";
-    String city = "Delhi";
-    RegistrationStep registrationSteps = new RegistrationStep();
-    Calendar calendar = new Calendar();
 
 
     @Test
@@ -40,29 +39,30 @@ public class TextBoxTests {
         registrationSteps.setFirstName(firstName);
         registrationSteps.setLastName(lastName);
         registrationSteps.setUserEmail(mail);
+        registrationSteps.setUserMale();
         registrationSteps.setUserPhoneNumber(num);
         registrationSteps.setBirthDate("");
         registrationSteps.setLang(lang);
-        registrationSteps.setHobbies("");
-        sleep(10000);
+        registrationSteps.setHobbies();
+        registrationSteps.setFile();
+        registrationSteps.setUserAddres(addres);
+        registrationSteps.setStateAndCity("");
+        registrationSteps.pressSubmit();
 
-//        $("[for=hobbies-checkbox-2]").click();
-//        $("#uploadPicture").uploadFile(new File("src/test/resources/img/1.png"));
 
-//        $("#currentAddress").setValue(addres).scrollTo();
-//        $("#state").click();
-//        $("#react-select-3-input").setValue(state).pressEnter();
-//        $("#city").click();
-//        $("#react-select-4-input").setValue(city).pressEnter();
-//        $("#submit").click();
-//        $(".modal-content").shouldBe(visible);
+        registrationSteps.checkModal();
+
+        registrationSteps.checkEverything("");
+
+//        registrationSteps.checkEverything(firstName, lastName, mail, "Male", num, "07 March,1996", lang,
+//                "Sports, Reading, Music", "2.png", addres, "NCR", "Delhi");
 //        //Check
 //        $(".table-responsive").shouldHave(text(Name));
 //        $(".table-responsive").shouldHave(text(LastName));
 //        $(".table-responsive").shouldHave(text(Mail));
 //        $(".table-responsive").shouldHave(text(Num));
 //        $(".table-responsive").shouldHave(text("Male"));
-//        $(".table-responsive").shouldHave(text("Sports, Reading"));
+//        $(".table-responsive").shouldHave(text("Sports, Reading, Music"));
 //        $(".table-responsive").shouldHave(text("07 March,1996"));
 //        $(".table-responsive").shouldHave(text("1.png"));
 //        $(".table-responsive").shouldHave(text(Eng));
