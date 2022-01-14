@@ -31,7 +31,7 @@ public class TextBoxTests extends TestBase {
                 .setUserMale()
                 .setUserPhoneNumber(num)
                 .setBirthDate()
-                .setLang(subject)
+                .setSubject(subject)
                 .setHobbies("Sports", "Reading", "Music")
                 .setFile()
                 .setUserAddress(addres)
