@@ -18,17 +18,14 @@ public class RegistrationPage {
             userEmail = Selenide.$("#userEmail"),
             userNumberPhone = Selenide.$("[id=userNumber]"),
             userLang = Selenide.$("[id=subjectsInput]"),
-            userHobbies = Selenide.$("[for=hobbies-checkbox-1]"),
+            userHobbiesSport = Selenide.$("[for=hobbies-checkbox-1]"),
+            userHobbiesReading = Selenide.$("[for=hobbies-checkbox-2]"),
+            userHobbiesMusic = Selenide.$("[for=hobbies-checkbox-3]"),
             userAddres = Selenide.$("#currentAddress"),
             userMale = Selenide.$("[for=gender-radio-1]"),
             userFile = $("#uploadPicture"),
             buttonSubmit = $("#submit"),
             modal = $(".modal-content"),
             check = $(".table-responsive");
-//    $("#uploadPicture").uploadFile(new File("src/test/resources/img/1.png"));
-
-
-
-
 
 }
