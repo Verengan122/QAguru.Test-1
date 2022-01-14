@@ -4,19 +4,14 @@ import homeWork5.newTestForm.steps.RegistrationStep;
 import homeWork5.newTestForm.testBase.TestBase;
 import org.junit.jupiter.api.Test;
 
-import java.awt.*;
-import java.io.File;
-
-import static com.codeborne.selenide.Selenide.*;
-
 public class TextBoxTests extends TestBase {
 
     Faker faker = new Faker();
     String firstName = faker.name().firstName();
     String lastName = faker.name().lastName();
     String mail = faker.internet().emailAddress();
-    String num = faker.numerify("##########");
-    String addres = faker.address().country() + " " +
+    String numberPhone = faker.numerify("##########");
+    String address = faker.address().country() + " " +
             faker.address().cityName() + " " +
             faker.address().buildingNumber();
     String subject = "Eng";
@@ -29,12 +24,12 @@ public class TextBoxTests extends TestBase {
                 .setLastName(lastName)
                 .setUserEmail(mail)
                 .setUserMale()
-                .setUserPhoneNumber(num)
+                .setUserPhoneNumber(numberPhone)
                 .setBirthDate()
                 .setSubject(subject)
                 .setHobbies("Sports", "Reading", "Music")
                 .setFile()
-                .setUserAddress(addres)
+                .setUserAddress(address)
                 .setStateAndCity()
                 .pressSubmit()
 
@@ -42,13 +37,13 @@ public class TextBoxTests extends TestBase {
 
                 .checkFieldFromResultPracticeForm("Student Name", firstName + " " + lastName)
                 .checkFieldFromResultPracticeForm("Student Email", mail)
-                .checkFieldFromResultPracticeForm("Mobile", num)
+                .checkFieldFromResultPracticeForm("Mobile", numberPhone)
                 .checkFieldFromResultPracticeForm("Gender", "Male")
                 .checkFieldFromResultPracticeForm("Subjects", subject)
                 .checkFieldFromResultPracticeForm("Date of Birth", "07 March,1996")
                 .checkFieldFromResultPracticeForm("Hobbies", "Sports, Reading, Music")
                 .checkFieldFromResultPracticeForm("Picture", "1.png")
-                .checkFieldFromResultPracticeForm("Address", addres)
+                .checkFieldFromResultPracticeForm("Address", address)
                 .checkFieldFromResultPracticeForm("State and City", "NCR Delhi");
 
     }
