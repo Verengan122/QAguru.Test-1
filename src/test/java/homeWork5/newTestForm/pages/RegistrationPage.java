@@ -21,7 +21,7 @@ public class RegistrationPage {
             userHobbiesSport = Selenide.$("[for=hobbies-checkbox-1]"),
             userHobbiesReading = Selenide.$("[for=hobbies-checkbox-2]"),
             userHobbiesMusic = Selenide.$("[for=hobbies-checkbox-3]"),
-            userAddres = Selenide.$("#currentAddress"),
+            userAddress = Selenide.$("#currentAddress"),
             userMale = Selenide.$("[for=gender-radio-1]"),
             userFile = $("#uploadPicture"),
             buttonSubmit = $("#submit"),

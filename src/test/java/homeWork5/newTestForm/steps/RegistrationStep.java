@@ -46,8 +46,8 @@ public class RegistrationStep extends RegistrationPage {
         return this;
     }
 
-    public RegistrationStep setBirthDate(String value) {
-        calendar.setDate(value);
+    public RegistrationStep setBirthDate() {
+        calendar.setDate();
         return this;
     }
 
@@ -70,12 +70,12 @@ public class RegistrationStep extends RegistrationPage {
         return this;
     }
 
-    public RegistrationStep setUserAddres(String value) {
-        userAddres.setValue(value).scrollTo();
+    public RegistrationStep setUserAddress(String value) {
+        userAddress.setValue(value).scrollTo();
         return this;
     }
 
-    public RegistrationStep setStateAndCity(String value) {
+    public RegistrationStep setStateAndCity() {
         stateAndCity.setStateAndCity();
         return this;
     }
